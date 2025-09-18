@@ -1,0 +1,210 @@
+/* --- 1. StoryCard Styles --- */
+
+.story-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.story-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.story-card-content {
+    padding: var(--padding-small);
+}
+
+.story-card-title {
+    font-size: 1.2em;
+    font-family: var(--font-heading);
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.story-card-author {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    margin-bottom: var(--padding-small);
+}
+
+/* --- 2. Header and Footer Styles --- */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link .logo {
+    height: 40px;
+    margin-right: var(--padding-medium);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--padding-medium);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links .active-link {
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 2px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--padding-small);
+}
+
+.user-actions .login-button,
+.user-actions .signup-button {
+    padding: var(--padding-small);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+}
+
+.user-actions .signup-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: var(--padding-small);
+}
+
+.footer-logo img {
+    height: 30px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--padding-medium);
+}
+
+.footer-nav a {
+    color: white;
+    font-size: 0.9em;
+}
+
+.social-media a img {
+    height: 24px;
+    margin: 0 5px;
+}
+
+.footer-bottom {
+    margin-top: var(--padding-small);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: var(--padding-small);
+}
+
+/* --- 3. PromptCard Styles --- */
+
+.prompt-card {
+    padding: var(--padding-medium);
+    border: 1px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    background-color: rgba(108, 99, 255, 0.05);
+}
+
+.prompt-card-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.prompt-card-text {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: var(--padding-small);
+}
+
+/* --- 4. InkBalance and Badge Styles --- */
+
+.ink-balance {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--background-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.ink-icon {
+    height: 20px;
+}
+
+.badge-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid gold;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.badge-icon:hover {
+    transform: scale(1.1);
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-box {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* --- 5. Submission Box Styles --- */
+
+.submission-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--padding-medium);
+    gap: var(--padding-small);
+}
+
+.submission-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: var(--padding-small);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.submit-button {
+    align-self: flex-end;
+}

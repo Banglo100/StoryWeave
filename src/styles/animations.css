@@ -1,0 +1,90 @@
+/* --- 1. Keyframes for Animations --- */
+
+/* Keyframes for a simple fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for a subtle slide-up effect */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for the 'pen writing' animation for a loading screen */
+@keyframes penWrite {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* --- 2. Animations Applied to Components --- */
+
+/* General animation for pages and content loading */
+.page-header,
+.page-section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Animation for cards sliding into view */
+.story-card,
+.shop-item,
+.prompt-card {
+    animation: slideUp 0.5s ease-out;
+    animation-fill-mode: backwards; /* Ensures the element starts from the 'from' state */
+}
+
+/* You can apply a delay to stagger the animations */
+.story-card:nth-child(1) { animation-delay: 0.1s; }
+.story-card:nth-child(2) { animation-delay: 0.2s; }
+.story-card:nth-child(3) { animation-delay: 0.3s; }
+/* ... and so on for other items in a grid */
+
+/* --- 3. Loading Screen Animation --- */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.loading-pen-svg {
+    width: 100px;
+    height: 100px;
+}
+
+.loading-pen-svg path {
+    stroke: var(--primary-color);
+    stroke-width: 5;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: penWrite 2s ease-in-out forwards;
+}
+
+.loading-screen p {
+    margin-top: var(--padding-medium);
+    font-size: 1.2em;
+    color: var(--text-color);
+}

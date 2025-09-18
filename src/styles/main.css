@@ -1,0 +1,152 @@
+/* --- 1. Global Styles & Variables --- */
+
+:root {
+    /* Define color palette */
+    --primary-color: #6C63FF; /* A vibrant purple for highlights */
+    --secondary-color: #534b8c; /* A darker purple for accents */
+    --background-color: #f4f4f9; /* A light, clean background */
+    --text-color: #333; /* Dark gray for main text */
+    --light-text-color: #777; /* Lighter gray for secondary text */
+    --border-color: #ddd; /* Light gray for borders */
+    --card-background: #fff; /* White for card backgrounds */
+
+    /* Define font styles */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Arial', sans-serif;
+
+    /* Spacing variables */
+    --padding-small: 10px;
+    --padding-medium: 20px;
+    --padding-large: 40px;
+    --border-radius: 8px;
+}
+
+/* Apply global styles to the body */
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Basic styles for links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: var(--padding-small);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--padding-large) 0;
+}
+
+/* --- 2. Main Layouts --- */
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Makes the main content area fill the space */
+    padding: var(--padding-large) 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--padding-large);
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.page-header p {
+    font-size: 1.2em;
+    color: var(--light-text-color);
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: var(--padding-medium);
+    text-align: center;
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--padding-medium);
+}
+
+/* --- 3. Component Styles (General) --- */
+
+.main-header {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-medium) var(--padding-large);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-footer {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: var(--padding-large);
+    text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* A simple card style for reusable components */
+.card {
+    background-color: var(--card-background);
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 4. Utility Classes --- */
+.loading-spinner,
+.error-message {
+    text-align: center;
+    padding: var(--padding-large);
+    font-size: 1.2em;
+    color: var(--light-text-color);
+}
+
+.buy-button, .auth-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--padding-small) var(--padding-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover, .auth-button:hover {
+    background-color: var(--secondary-color);
+}
