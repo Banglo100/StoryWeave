@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 import StoryPart from '../components/StoryPart';
 import SubmissionBox from '../components/SubmissionBox';
 import VoteButton from '../components/VoteButton';
@@ -30,9 +32,9 @@ const fetchStoryData = async (storyId) => {
     };
 };
 
-function StoryPage({ match }) {
-    // This gets the story ID from the URL, e.g., /story/123
-    const storyId = match.params.storyId; 
+function StoryPage() {
+    // This gets the story ID from the URL using the new useParams hook.
+    const { storyId } = useParams(); 
     const [story, setStory] = useState(null);
     const [loading, setLoading] = useState(true);
 
