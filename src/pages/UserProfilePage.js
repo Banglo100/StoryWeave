@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // <--- UPDATED: Import the useParams hook
+import { useParams } from 'react-router-dom';
 
 import StoryCard from '../components/StoryCard';
 import Badge from '../components/Badge';
@@ -13,7 +13,7 @@ const fetchUserData = async (username) => {
 };
 
 // This component represents the full user profile page.
-function UserProfilePage() { // <--- UPDATED: Removed 'match' from parameters
+function UserProfilePage() {
     // This is how you would get the username from the URL, e.g., /profile/JaneDoe
     const { username } = useParams(); 
     const [user, setUser] = useState(null);
@@ -40,7 +40,7 @@ function UserProfilePage() { // <--- UPDATED: Removed 'match' from parameters
     return (
         <div className="user-profile-page">
             <div className="profile-header">
-                <img src={user.avatar || '/assets/images/default-avatar.png'} alt={`${user.name}'s avatar`} className="profile-avatar" />
+                <img src={user.avatar || 'assets/images/default-avatar.png'} alt={`${user.name}'s avatar`} className="profile-avatar" />
                 <h1 className="profile-name">{user.name}</h1>
                 <p className="profile-bio">{user.bio}</p>
                 <div className="profile-stats">
